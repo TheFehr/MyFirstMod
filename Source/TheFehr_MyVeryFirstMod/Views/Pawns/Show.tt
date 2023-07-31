@@ -1,0 +1,4 @@
+﻿<#@ template language="C#" #>
+
+<h1><#= Pawn.Name.ToStringFull #></h1>
+<p><#= Pawn.health.Dead ? "Dead" : "Alive" #>

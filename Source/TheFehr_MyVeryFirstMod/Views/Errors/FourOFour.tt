@@ -1,0 +1,3 @@
+﻿<#@ template language="C#" #>
+<h1>RimWorld Web Manager</h1>
+<p>Your pawn got lost</p>

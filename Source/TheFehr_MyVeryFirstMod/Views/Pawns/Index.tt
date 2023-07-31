@@ -1,0 +1,28 @@
+﻿<#@ template language="C#" #>
+
+<h1>Pawns</h1>
+<# foreach (var playerAlivePawn in PawnGroups) 
+{ #>
+    <h2><#= playerAlivePawn.Key.defName #></h2>
+    <ol>
+        <#
+    foreach (var pawn in playerAlivePawn)
+    {
+#>
+    <li>
+        <a href="/pawn/<#= pawn.ThingID #>"><#= pawn.Name.ToStringFull #></a>
+    </li>
+<#
+    }
+#>
+    </ol>
+<# } #>
+
+<button
+    hx-get=""/pawns?update=true""
+    hx-trigger=""click""
+    hx-target=""body""
+    hx-swap=""innerHtml""
+>
+Reload
+</button>

@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{1DD9E4B3-DE35-4650-AF38-21C71CAD9D85}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>TheFehr_MyVeryFirstMod</RootNamespace>
+        <AssemblyName>TheFehr_MyVeryFirstMod</AssemblyName>
+        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>..\..\Assemblies</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>..\..\Assemblies</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="Assembly-CSharp">
+          <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Xml" />
+        <Reference Include="UnityEngine.CoreModule">
+          <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Controllers\ControllerContext.cs" />
+        <Compile Include="Controllers\IController.cs" />
+        <Compile Include="Controllers\Pawn.cs" />
+        <Compile Include="HttpServer.cs" />
+        <Compile Include="ModExtension_PlagueBullet.cs" />
+        <Compile Include="Projectile_PlagueBullet.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="RimWorldManagerServer.cs" />
+        <Compile Include="TheFehr_MyVeryFirstMod.cs" />
+        <Compile Include="Views\BaseTemplate.cs">
+          <DependentUpon>BaseTemplate.tt</DependentUpon>
+        </Compile>
+        <Compile Include="Views\Errors\FourOFour.cs">
+          <DependentUpon>FourOFour.tt</DependentUpon>
+        </Compile>
+        <Compile Include="Views\Index.cs">
+          <DependentUpon>Index.tt</DependentUpon>
+        </Compile>
+        <Compile Include="Views\Pawns\Index.cs">
+          <AutoGen>True</AutoGen>
+          <DesignTime>True</DesignTime>
+          <DependentUpon>Index.tt</DependentUpon>
+        </Compile>
+        <Compile Include="Views\Pawns\TemplatesCode.cs" />
+        <Compile Include="Views\Pawns\Show.cs">
+          <AutoGen>True</AutoGen>
+          <DesignTime>True</DesignTime>
+          <DependentUpon>Show.tt</DependentUpon>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="Views\BaseTemplate.tt">
+        <Generator>TextTemplatingFilePreprocessor</Generator>
+        <LastGenOutput>BaseTemplate.cs</LastGenOutput>
+      </Content>
+      <Content Include="Views\Errors\FourOFour.tt">
+        <Generator>TextTemplatingFilePreprocessor</Generator>
+        <LastGenOutput>FourOFour.cs</LastGenOutput>
+      </Content>
+      <Content Include="Views\Index.tt">
+        <Generator>TextTemplatingFilePreprocessor</Generator>
+        <LastGenOutput>Index.cs</LastGenOutput>
+      </Content>
+      <Content Include="Views\Pawns\Index.tt">
+        <Generator>TextTemplatingFilePreprocessor</Generator>
+        <LastGenOutput>Index.cs</LastGenOutput>
+      </Content>
+      <Content Include="Views\Pawns\Show.tt">
+        <Generator>TextTemplatingFilePreprocessor</Generator>
+        <LastGenOutput>Show.cs</LastGenOutput>
+      </Content>
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>

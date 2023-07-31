@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>My very first Mod - Plague Gun</name>
+    <author>TheFehr</author>
+    <packageId>TheFehr.MyVeryFirstMod</packageId>
+    <supportedVersions>
+        <li>1.4</li>
+    </supportedVersions>
+    <description>This mod adds a plague gun, a weapon that has a chance to give your enemies the plague.\n\nFor version 1.4.</description>
+</ModMetaData>
